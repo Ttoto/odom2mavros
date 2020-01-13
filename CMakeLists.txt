@@ -15,6 +15,9 @@ find_package(catkin REQUIRED COMPONENTS
     nav_msgs
     geometry_msgs
     )
+find_package (Eigen3 REQUIRED)
+find_package (yaml-cpp REQUIRED)
+find_package (Sophus REQUIRED )
 
 
 catkin_package(
@@ -23,6 +26,8 @@ catkin_package(
 
 include_directories(
     ${catkin_INCLUDE_DIRS}
+    ${Sophus_INCLUDE_DIRS}
+    ${YAML_CPP_INCLUDE_DIR}
     )
 
 
@@ -30,4 +35,6 @@ add_executable(node_odom2mavros src/odom2mavros_node.cpp)
 
 target_link_libraries(node_odom2mavros
     ${catkin_LIBRARIES}
+    ${YAML_CPP_LIBRARIES}
+    ${Sophus_LIBRARIES}
     )
