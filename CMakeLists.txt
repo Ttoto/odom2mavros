@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(vo2mavros)
+project(odom2mavros)
 
 
 
@@ -26,8 +26,8 @@ include_directories(
     )
 
 
-add_executable(node_vo2mavros src/vo2mavros_node.cpp)
+add_executable(node_odom2mavros src/odom2mavros_node.cpp)
 
-target_link_libraries(node_vo2mavros
+target_link_libraries(node_odom2mavros
     ${catkin_LIBRARIES}
     )

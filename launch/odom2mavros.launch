@@ -1,0 +1,12 @@
+<launch>
+
+    <node pkg="odom2mavros" type="node_odom2mavros" name="odom2mavros">
+        <param name="odom_topic" type="string" value="map" />
+        <param name="mavros_topic" type="string" value="map" />
+        <param name="transformation_file" value="$(find odom2mavros)/launch/T_imu_odom.yaml" />
+    </node>
+
+</launch>
+
+
+

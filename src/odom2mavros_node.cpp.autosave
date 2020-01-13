@@ -19,9 +19,9 @@ void vo_callback(const nav_msgs::OdometryConstPtr msg)
 int main(int argc, char **argv)
 {
 
-  ros::init(argc, argv, "vo2mavros_node");
-
+  ros::init(argc, argv, "odom2mavros");
   ros::NodeHandle n;
+  
 
   vo_has_pose = false;
 
