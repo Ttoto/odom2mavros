@@ -84,21 +84,18 @@ int main(int argc, char **argv)
 {
 
     ros::init(argc, argv, "odom2mavros");
-    ros::NodeHandle nh;
-    string configFilePath;
-    string mavros_topic;
-    string odom_topic;
+    ros::NodeHandle nh("~");
+    string configFilePath, mavros_topic, odom_topic;
     int frequency=0;
 
-    cout  <<"get parameter" << endl;
+    cout  << "get parameter:" << endl;
     nh.getParam("odom_topic", odom_topic);
-    nh.getParam("mavros_topic", mavros_topic);
-    nh.getParam("config_file_path", configFilePath);
-    nh.getParam("pub_frequency", frequency);
-
     cout << odom_topic << endl;
+    nh.getParam("mavros_topic", mavros_topic);
     cout << mavros_topic << endl;
+    nh.getParam("config_file_path", configFilePath);
     cout << configFilePath << endl;
+    nh.getParam("pub_frequency", frequency);
     cout << frequency << endl;
 
     Mat4x4 mat_imu_odom;//odom to imu frame
